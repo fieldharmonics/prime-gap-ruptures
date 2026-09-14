@@ -76,7 +76,7 @@ The oasis description does not imply that rupture interiors contain statisticall
 
 ## 9 Skipped steps and recovery
 
-For each skipped step t in Kₙ, let F(t) be the lower endpoint of the first consecutive-prime gap of size 2t. Its recovery pair is F(t)→F(t)+2t. This occurrence must be later than the rupture, because t exceeded every earlier step. Complete recovery is observed at the upper endpoint of the last such pair. We also report that pair's lower endpoint as complete_p. No recovery date is assigned until both endpoints lie within the observation boundary.
+For each skipped step t in Kₙ, let F(t) be the lower endpoint of the first consecutive-prime gap of size 2t, if such a gap exists. Its recovery pair is F(t)→F(t)+2t. This occurrence must be later than the rupture, because t exceeded every earlier step. Complete recovery is observed at the upper endpoint of the last such pair. We also report that pair's lower endpoint as complete_p. No recovery date is assigned until both endpoints lie within the observation boundary.
 
 For 113→127, step 5 first appears at 139→149 and step 6 at 199→211. The recovery order is 5,6 and complete recovery is observed at 211, before any subsequent rupture. “Recovery” means first later occurrence only, not repair or balancing.
 
@@ -166,11 +166,11 @@ During preparation of this work, the author used OpenAI Codex in ChatGPT Work (G
 
 [1] Prime Gap List Project. Prime Gap Records, allgaps.sql snapshot and data-field documentation. Accessed 13 September 2026. https://github.com/primegap-list-project/prime-gap-list ; https://primegap-list-project.github.io/prime-gap-record-data-fields/
 
-[2] Prime Gap List Project. Exhaustively analyzed gaps. Accessed 13 September 2026. https://primegap-list-project.github.io/fully-analyzed/
+[2] Prime Gap List Project. Exhaustively analyzed gaps. Accessed 13 September 2026; boundary rechecked 14 September 2026. https://primegap-list-project.github.io/fully-analyzed/
 
 [3] OEIS Foundation. A002386, record-gap lower primes; A000101, upper primes; A005250, record-gap values. B-files accessed 13 September 2026. https://oeis.org/A002386 ; https://oeis.org/A000101 ; https://oeis.org/A005250
 
-[4] OEIS Foundation. A000230, smallest lower prime for each even gap. B-file through step 721, accessed 13 September 2026. https://oeis.org/A000230
+[4] OEIS Foundation. A000230, smallest lower prime for each even gap. B-file through step 721, refreshed 14 September 2026. https://oeis.org/A000230
 
 [5] H. Mlcousek and OEIS contributors. A014321, first-occurrence half-gap order; B-file by Brian Kehrig, with earlier terms by Ferenc Adorjan. Accessed 13 September 2026. https://oeis.org/A014321
 

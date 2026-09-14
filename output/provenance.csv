@@ -5,6 +5,5 @@ sources/boundary.html,https://primegap-list-project.github.io/fully-analyzed/,20
 sources/oeis_upper.txt,https://oeis.org/A000101/b000101.txt,2026-09-13,44e98f1b14d1580f9e5461a46a668b04200950a55f4d7f7231fabd1483557ecf,1315
 sources/allgaps.sql,https://raw.githubusercontent.com/primegap-list-project/prime-gap-list/master/allgaps.sql,2026-09-13,aa1f626e2f306d3cd3c620a87bbd9c542553385f22c6f3c6a6b92dceb12c3f29,15099209
 sources/oeis_lower.txt,https://oeis.org/A002386/b002386.txt,2026-09-13,671d8f0616ebb9fa264849ec35838b69997a43ba36ed7438489aa501114e793f,1314
-sources/oeis_first.txt,https://oeis.org/A000230/b000230.txt,2026-09-13,00fbc40a40feb4e17df94326923162f82c267a78c7e37a08cbec7ed75b4fe7ba,12424
-sources/Maths Research/Prime Factor to Violation#1.xlsx,Original author source,2026-09-13,a773fa9e66a8df938a1971358fd7f6c3cef77b2f3babf899d65cd2ec3b246be5,24671
-sources/Maths Research/Violation Events in the Prime Sequence V2.0.pdf,Original author source,2026-09-13,46d9aa8fe6820d857a199ed594aa3dbfeaea3a35e51c05039d26391608c5f475,339752
+sources/oeis_first.txt,https://oeis.org/A000230/b000230.txt,2026-09-14,63aecdff03956b30a41247e9b3fab55326499813aa196d436a2533b610bb48ed,13366
+sources/boundary.md,Author-written factual summary of https://primegap-list-project.github.io/fully-analyzed/,2026-09-14,f14d181758f87ff272674e664a57a0ed9bdb9433cf2d8c7554d84a667dfe4319,825

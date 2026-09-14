@@ -42,6 +42,30 @@ def primes(bound,block=1000000):
             if v:yield lo+i
 def classify(s,m):return 'initial' if m is None else ('rupture' if s>m+1 else 'sequential' if s==m+1 else 'nonrecord')
 def skipped(s,m):return list(range(m+1,s)) if classify(s,m)=='rupture' else []
+def read_indexed(path,start,count):
+    """Read a frozen B-file and reject missing, duplicate or reordered indices."""
+    rows=[tuple(map(int,line.split())) for line in path.read_text().splitlines() if line.strip() and not line.lstrip().startswith('#')]
+    if any(len(row)!=2 for row in rows) or [r[0] for r in rows]!=list(range(start,start+count)):
+        raise ValueError(f'Unexpected index coverage in {path.name}')
+    return [r[1] for r in rows]
+def validate_sources():
+    """Check every included source against the recorded byte length and digest."""
+    with (ROOT/'output/provenance.csv').open() as f:
+        for row in csv.DictReader(f):
+            path=ROOT/row['file']
+            if not path.is_file():
+                if row['file'] in ('sources/allgaps.sql','sources/boundary.html'):
+                    continue  # Deliberately omitted historical inputs; see sources/README.md.
+                raise ValueError(f'Missing source: {row["file"]}')
+            raw=path.read_bytes()
+            if len(raw)!=int(row['bytes']) or hashlib.sha256(raw).hexdigest()!=row['sha256']:
+                raise ValueError(f'Source checksum or length mismatch: {row["file"]}')
+def peak_mib(value,system):
+    return value/(1024*1024 if system=='Darwin' else 1024) if value is not None else None
+def delay_maximum(events):
+    complete=[e for e in events if e['recovery_status']=='complete']
+    maximum=max((e['delay_ruptures'] for e in complete),default=None)
+    return maximum,[e['event'] for e in complete if e['delay_ruptures']==maximum]
 def scan(bound):
     prev=None;m=None;records=[];first={};count=0
     for q in primes(bound):
@@ -57,9 +81,11 @@ def write(name,rows):
     with (ROOT/'output'/name).open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
 def main():
+    if not __debug__:raise RuntimeError('Run without -O: source cross-check assertions must remain enabled')
     start=time.perf_counter();(ROOT/'output').mkdir(exist_ok=True)
-    low=[int(x.split()[1]) for x in (ROOT/'sources/oeis_lower.txt').read_text().splitlines()]
-    high=[int(x.split()[1]) for x in (ROOT/'sources/oeis_upper.txt').read_text().splitlines()]
+    validate_sources()
+    low=read_indexed(ROOT/'sources/oeis_lower.txt',1,85)
+    high=read_indexed(ROOT/'sources/oeis_upper.txt',1,85)
     data=list(csv.DictReader((ROOT/'sources/gap_snapshot.csv').open()))
     first={int(r['gap'])//2:(int(r['p']),int(r['p'])+int(r['gap'])) for r in data if int(r['gap'])%2==0 and r['first_status']=='F' and int(r['p'])+int(r['gap'])<=B}
     allfirst={int(r['gap']):int(r['p']) for r in data}
@@ -78,11 +104,10 @@ def main():
     local,lf,count,last=scan(100000000)
     assert [(r['p'],r['q']) for r in local]==[(r['p'],r['q']) for r in records if r['q']<=100000000]
     for t,(p,q,i) in lf.items():assert first[t]==(p,q)
-    order=[int(x.split()[1]) for x in (ROOT/'sources/oeis_order.txt').read_text().splitlines()]
+    order=read_indexed(ROOT/'sources/oeis_order.txt',1,747)
     ordered=[t for t in sorted(first,key=lambda t:first[t][0])]
     assert ordered[:len(order)]==order
-    for line in (ROOT/'sources/oeis_first.txt').read_text().splitlines():
-        t,p=map(int,line.split())
+    for t,p in enumerate(read_indexed(ROOT/'sources/oeis_first.txt',0,722)):
         if t:assert first[t][0]==p
     localidx={r['p']:r['index'] for r in local}
     recoveries=[]
@@ -102,7 +127,8 @@ def main():
         e.update(recovered_count=len(done),recovery_status='complete' if complete else 'right_censored' if e['q']<=B else 'outside_detection_boundary',complete_p=done[-1]['p'] if complete else '',complete_q=done[-1]['q'] if complete else '',last_step=done[-1]['step'] if complete else '',delay_ruptures=done[-1]['later_ruptures'] if complete else '',recovery_order=';'.join(str(r['step']) for r in done))
         recoveries+=rr
     write('ruptures.csv',events);write('recoveries.csv',recoveries);write('records.csv',records)
-    peak=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024 if resource else None
-    summary=dict(boundary=B,direct_boundary=100000000,direct_prime_count=count,direct_last_prime=last,listed_events=len(events),confirmed=sum(e['q']<=B for e in events),complete=sum(e['recovery_status']=='complete' for e in events),first13_max=max(e['delay_ruptures'] for e in events[:13]),max_delay=max(e['delay_ruptures'] for e in events if e['recovery_status']=='complete'),max_events=[e['event'] for e in events if e['delay_ruptures']==8],seconds=time.perf_counter()-start,peak_MiB=peak,python=platform.python_version(),platform=platform.platform(),cpu=platform.processor())
+    peak=peak_mib(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss if resource else None,platform.system())
+    maximum,max_events=delay_maximum(events)
+    summary=dict(boundary=B,direct_boundary=100000000,direct_prime_count=count,direct_last_prime=last,listed_events=len(events),confirmed=sum(e['q']<=B for e in events),complete=sum(e['recovery_status']=='complete' for e in events),first13_max=max(e['delay_ruptures'] for e in events[:13]),max_delay=maximum,max_events=max_events,seconds=time.perf_counter()-start,peak_MiB=peak,python=platform.python_version(),platform=platform.platform(),cpu=platform.processor())
     (ROOT/'output/summary.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()

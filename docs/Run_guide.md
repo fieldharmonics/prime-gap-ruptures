@@ -6,7 +6,7 @@ Open **output/Prime_Gap_Ruptures.pdf** to read the paper, or the Word file besid
 
 **output/ruptures.csv** has one row per event. Rows 1–68 are confirmed within the stated boundary; row 69 is provisional. **output/recoveries.csv** has one row per skipped step. Blank recovery endpoints mean censored or outside-boundary, as stated in the status column; they do not mean zero. The file includes partial recovery orders. All endpoints are exact decimal integers.
 
-When opening CSV files in Excel or similar software, use its import command and set endpoint columns to **Text**. Simply double-clicking can round the large integers. Keep an untouched copy of the supplied CSV files.
+When opening CSV files in Excel or similar software, use its import command and set endpoint and exact integer-distance columns (including numerical_distance) to **Text**. Simply double-clicking can round the large integers. Keep an untouched copy of the supplied CSV files.
 
 ## Repeating the calculation
 
@@ -14,11 +14,11 @@ When opening CSV files in Excel or similar software, use its import command and 
 2. Use Python 3.12 or later. The numerical calculation needs only Python's standard library and works offline with the included source snapshots.
 3. Open a terminal in that folder. On Windows, “Open in Terminal” is usually available from the folder's context menu. On macOS or Linux, open Terminal and change to that folder.
 4. Run `python3 analysis.py` (or `py analysis.py` on Windows).
-5. Run `python3 -m unittest -v test_analysis` (or `py -m unittest -v test_analysis`). The expected result is **30 tests, OK**.
+5. Run `python3 -m unittest -v test_analysis` (or `py -m unittest -v test_analysis`). The expected result is **36 tests, OK**.
 
-The numerical calculation took about eight seconds in the research environment. A slower computer may take longer. It enumerates primes only through 100 million, then checks and analyses the supplied published records. It does not enumerate all primes through 10²⁰.
+The numerical calculation usually takes several seconds; output/summary.json records the latest measured runtime and environment. A slower computer may take longer. It enumerates primes only through 100 million, then checks and analyses the supplied published records. It does not enumerate all primes through 10²⁰.
 
-The expected headline output is 69 listed entries, 68 confirmed entries, 66 complete recoveries, first-thirteen maximum 3, expanded maximum 8, and maximum events 27 and 59. The scripts stop with an assertion error if a source cross-check disagrees. Do not ignore such an error or use partially refreshed outputs.
+The expected headline output is 69 listed entries, 68 confirmed entries, 66 complete recoveries, first-thirteen maximum 3, expanded maximum 8, and maximum events 27 and 59. Run without Python's `-O` option, which would disable required assertions. The scripts check the frozen source hashes and expected OEIS index coverage, and stop with an assertion or validation error if a source cross-check disagrees. Do not ignore such an error or use partially refreshed outputs.
 
 ## Optional figures and Word rebuild
 
@@ -39,6 +39,6 @@ Gap-count and prime-index distance use the same index difference and are populat
 
 ## Provenance and boundaries
 
-The **sources** folder contains a compact snapshot of gap data through size 1854, the OEIS tables used for cross-checks and the published coverage page. The original exploratory PDF and workbook are privately retained rather than republished; their checksums remain in `output/provenance.csv`. The original full SQL download's checksum is also recorded although that larger file is omitted. The compact snapshot is sufficient to repeat every numerical result in the paper.
+The **sources** folder contains a compact snapshot of gap data through size 1854, the OEIS tables used for cross-checks and an author-written summary of the published coverage claim. The original exploratory PDF and workbook are privately retained rather than republished; their filenames and checksums are omitted from the public provenance. The original full SQL download's checksum is also recorded although that larger file is omitted. The compact snapshot is sufficient to repeat every numerical result in the paper.
 
 The declared exhaustive boundary is a claim of the published search project, not an independently rerun search at that scale. Beyond it, verified consecutive endpoints do not establish record priority. Updating the catalogue requires a fresh complete-coverage statement, new source cross-checks and a review of all censoring statuses. Do not simply increase the boundary constant.

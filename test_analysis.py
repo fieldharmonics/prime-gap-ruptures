@@ -1,4 +1,5 @@
 import unittest,csv
+from unittest.mock import Mock
 from analysis import *
 class AuditTests(unittest.TestCase):
  @classmethod
@@ -52,4 +53,20 @@ class AuditTests(unittest.TestCase):
  def test_29_segment_edges(self):self.assertEqual(list(primes(1000,17)),list(primes(1000,1000)))
  def test_30_finite_censor(self):
   _,f,_,_=scan(149);self.assertIn(5,f);self.assertNotIn(6,f)
+ def test_31_source_hashes(self):validate_sources()
+ def test_32_first_occurrence_coverage(self):self.assertEqual(len(read_indexed(ROOT/'sources/oeis_first.txt',0,722)),722)
+ def test_33_reject_bad_indices(self):
+  for contents in ('0 1\n2 3\n','0 1\n0 3\n','0 1\n'):
+   path=Mock();path.name='synthetic';path.read_text.return_value=contents
+   with self.assertRaises(ValueError):read_indexed(path,0,2)
+ def test_34_data_driven_maximum(self):
+  events=[dict(event=1,recovery_status='complete',delay_ruptures=2),dict(event=2,recovery_status='complete',delay_ruptures=5),dict(event=3,recovery_status='right_censored',delay_ruptures='')]
+  self.assertEqual(delay_maximum(events),(5,[2]));self.assertEqual(delay_maximum([]),(None,[]))
+ def test_35_memory_units(self):
+  self.assertEqual(peak_mib(1024,'Linux'),1);self.assertEqual(peak_mib(1048576,'Darwin'),1);self.assertIsNone(peak_mib(None,'Windows'))
+ def test_36_summary_maximum(self):
+  summary=json.loads((ROOT/'output/summary.json').read_text())
+  maximum=max(int(e['delay_ruptures']) for e in self.e if e['recovery_status']=='complete')
+  self.assertEqual(summary['max_delay'],maximum)
+  self.assertEqual(summary['max_events'],[int(e['event']) for e in self.e if e['delay_ruptures']==str(maximum)])
 if __name__=='__main__':unittest.main(verbosity=2)

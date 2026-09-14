@@ -54,7 +54,7 @@ python3 analysis.py
 python3 -m unittest -v test_analysis
 ```
 
-Expected result: **30 tests, OK**. The direct sieve through \(10^8\) usually takes several seconds. It does not attempt to enumerate primes through \(10^{20}\); record priority above \(10^8\) is checked against the cited published data.
+Expected result: **36 tests, OK**. The direct sieve through \(10^8\) usually takes several seconds. It does not attempt to enumerate primes through \(10^{20}\); record priority above \(10^8\) is checked against the cited published data.
 
 Optional figure and document rebuilding uses the versions listed in `requirements-optional.txt`.
 
@@ -88,4 +88,3 @@ Original prose, figures and author-produced datasets are released under **CC BY 
 ## AI assistance
 
 The originating concept, visual representation, source manuscript, spreadsheet and research direction are Riccardo Panza's. OpenAI Codex in ChatGPT Work assisted under his direction with restructuring, mathematical and computational auditing, code, testing, literature discovery, tables and figures. The author reviewed the work and accepts responsibility for it. See [AI_ASSISTANCE.md](AI_ASSISTANCE.md).
-

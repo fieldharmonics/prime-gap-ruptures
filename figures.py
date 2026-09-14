@@ -23,9 +23,14 @@ def tree(ps,name,title,full=False):
   ax.text(67,i,str(p),va='center',fontsize=9)
   if i>0 and p>=3 and prev>=3:ax.text(78,i,str((p-prev)//2),va='center',fontsize=9,fontweight='bold' if p==127 else 'normal')
   prev=p
- ax.text(67,-1.2,'Prime',fontsize=9);ax.text(76,-1.2,'Step',fontsize=9)
+ ax.text(65,-1.2,'Row value',fontsize=8);ax.text(78,-1.2,'Step',fontsize=9)
  ax.set_xlim(-68,86);ax.set_ylim(len(ps),-2);ax.axis('off');ax.set_title(title,pad=15)
- if full:fig.text(.13,.01,'1 is a construction seed, not a prime.  The exceptional prime 2 is shown separately.',fontsize=9)
+ if full:
+  for x in (-58,-57):
+   ax.add_patch(Rectangle((x-.48,1.65),.96,.7,facecolor='#ddd',edgecolor='black',lw=.5))
+  ax.text(-54,2,'2: exceptional even prime',va='center',fontsize=8)
+  ax.text(-58,3.4,'Outside the odd-prime step history',fontsize=8)
+  fig.text(.13,.01,'1 is a construction seed, not a prime.  The separate inset contains two blocks for 2.',fontsize=9)
  save(fig,name)
 tree([1]+list(primes(127))[1:],'01_prime_step_tree','The prime-step tree: centred rows through 127',True)
 tree([p for p in primes(127) if p>=89],'02_enlargement','Every prime row from 89 to 127')

@@ -19,4 +19,5 @@ jobs:
         run: python analysis.py
       - name: Run automated tests
         run: python -m unittest -v test_analysis
-
+      - name: Require exact committed numerical outputs
+        run: git diff --exit-code -- output/ruptures.csv output/recoveries.csv output/records.csv

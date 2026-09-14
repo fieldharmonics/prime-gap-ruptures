@@ -1,5 +1,9 @@
 {
   "matplotlib": "3.10.8",
   "python_docx": "1.2.0",
-  "openpyxl": "3.1.5"
+  "openpyxl": "3.1.5",
+  "python": "3.12.14",
+  "libreoffice": "26.8.0.0.alpha0",
+  "pdf_rendering": "LibreOffice DOCX export via render_docx.py",
+  "document_build_date": "2026-09-14"
 }

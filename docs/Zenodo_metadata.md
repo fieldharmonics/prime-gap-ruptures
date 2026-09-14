@@ -50,7 +50,7 @@ For consecutive odd primes, let the step be half their difference and let the pr
 
 **Description:**
 
-Reproducibility package for *Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps*. The release contains exact CSV catalogues, source provenance, Python analysis code, 30 automated tests, ten figures, the mathematical audit and documentation for verification and extension. It distinguishes 68 confirmed ruptures within the declared 10^20 boundary from a 69th outside-boundary candidate and records complete or censored recovery status for every skipped step.
+Reproducibility package for *Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps*. The release contains exact CSV catalogues, source provenance, Python analysis code, 36 automated tests, ten figures, the mathematical audit and documentation for verification and extension. It distinguishes 68 confirmed ruptures within the declared 10^20 boundary from a 69th outside-boundary candidate and records complete or censored recovery status for every skipped step.
 
 **Related identifiers to add after Record A exists:**
 
@@ -67,4 +67,3 @@ After Zenodo reserves or issues the DOIs:
 4. add reciprocal related identifiers in both Zenodo records;
 5. tag the exact GitHub commit as `v1.0.0`;
 6. do not alter that tag after publication; use a new version for corrections.
-

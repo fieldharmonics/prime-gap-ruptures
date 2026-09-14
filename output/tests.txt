@@ -28,8 +28,14 @@ test_27_nonrecord (test_analysis.AuditTests.test_27_nonrecord) ... ok
 test_28_primality (test_analysis.AuditTests.test_28_primality) ... ok
 test_29_segment_edges (test_analysis.AuditTests.test_29_segment_edges) ... ok
 test_30_finite_censor (test_analysis.AuditTests.test_30_finite_censor) ... ok
+test_31_source_hashes (test_analysis.AuditTests.test_31_source_hashes) ... ok
+test_32_first_occurrence_coverage (test_analysis.AuditTests.test_32_first_occurrence_coverage) ... ok
+test_33_reject_bad_indices (test_analysis.AuditTests.test_33_reject_bad_indices) ... ok
+test_34_data_driven_maximum (test_analysis.AuditTests.test_34_data_driven_maximum) ... ok
+test_35_memory_units (test_analysis.AuditTests.test_35_memory_units) ... ok
+test_36_summary_maximum (test_analysis.AuditTests.test_36_summary_maximum) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 0.012s
+Ran 36 tests in 0.007s
 
 OK

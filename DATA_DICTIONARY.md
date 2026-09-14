@@ -1,8 +1,10 @@
 # Data dictionary
 
-All prime endpoints are stored as decimal integer strings in CSV files. Import them as **text** in spreadsheet software to prevent rounding beyond 15 digits. Empty fields mean unavailable or not applicable under the stated status; they do not mean zero.
+All prime endpoints and exact integer distances (including `numerical_distance`) are stored as decimal integer strings in CSV files. Import these columns as **text** in spreadsheet software to prevent rounding beyond 15 digits. Empty fields mean unavailable or not applicable under the stated status; they do not mean zero.
 
 ## `output/records.csv`
+
+This file contains 84 odd-prime rows with record identifiers 2–85. Identifier 1 is the exceptional gap 2→3 and is omitted, but its place in the source numbering is retained. Identifier 85 corresponds to candidate event 69 and lies outside the confirmed boundary; identifiers are not physical CSV row numbers.
 
 | Field | Meaning |
 |---|---|
@@ -18,7 +20,7 @@ All prime endpoints are stored as decimal integer strings in CSV files. Import t
 | Field | Meaning |
 |---|---|
 | `event` | Rupture number in chronological order |
-| `record` | Corresponding position in `records.csv` |
+| `record` | Shared `record` identifier in `records.csv`, not the physical row number |
 | `p`, `q`, `gap`, `step` | Event endpoints and exact gap/step values |
 | `previous` | Earlier maximum step \(M\) |
 | `jump` | `step - previous` |
@@ -56,4 +58,3 @@ All prime endpoints are stored as decimal integer strings in CSV files. Import t
 - `spreadsheet_inventory.csv`: non-empty cells from the privately retained source workbook; it contains values and coordinates, not formulas.
 - `provenance.csv`: source, access date, SHA-256 checksum and byte length.
 - `summary.json`: headline boundary, count, runtime and environment fields from the latest calculation.
-
