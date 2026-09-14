@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this framework, dataset or code, please cite this work."
+type: software
+title: "Prime-Gap Ruptures: Reproducibility Package"
+version: 1.0.0
+date-released: 2026-09-14
+authors:
+  - family-names: Panza
+    given-names: Riccardo
+repository-code: "https://github.com/fieldharmonics/prime-gap-ruptures"
+url: "https://github.com/fieldharmonics/prime-gap-ruptures"
+abstract: >-
+  Code, data, tests and figures accompanying an observational classification
+  of record prime-gap transitions that skip intermediate half-gap levels,
+  together with a recovery analysis of the skipped levels.
+keywords:
+  - prime gaps
+  - maximal prime gaps
+  - record prime gaps
+  - half-gaps
+  - first occurrences
+  - computational number theory
+  - reproducible research
+preferred-citation:
+  type: article
+  title: "Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps"
+  authors:
+    - family-names: Panza
+      given-names: Riccardo
+  year: 2026
+

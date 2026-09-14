@@ -1,0 +1,33 @@
+name: Correction report
+description: Report a suspected mathematical, data, code or editorial error.
+title: "Correction: "
+labels: [correction]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Mathematical definition or proof
+        - Rupture catalogue
+        - Recovery data
+        - Source or provenance
+        - Code or test
+        - Figure or manuscript
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Suspected error
+      description: Identify the exact row, field, passage or line.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and proposed correction
+      description: Include exact arithmetic, source details or a reproducible example.
+    validations:
+      required: true
+

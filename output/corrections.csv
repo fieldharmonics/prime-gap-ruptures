@@ -1,0 +1,34 @@
+id,location,correction
+M01,"Abstract; Sections 1, 3–7, 9–11","Remove claims of capacity, structural failure, feasibility, stress, influence and response. The definition establishes a record classification, not those mechanisms."
+M02,Section 1.1,The assertion that listed structured prime configurations are known to occur infinitely often is unsupported and includes unresolved problems. Remove it.
+M03,Section 2.2,Prime gaps are integer quantities in classical number theory. Gap descriptions do not implicitly treat them as continuous.
+M04,Section 2.3,"A step s counts unit moves on the odd-number lattice, not interior odd integers. There are s−1 interior odd integers and 2s−1 interior integers."
+M05,"Sections 2.3, 10","Half-gap normalisation is an invertible rescaling g=2s. It adds visual convenience, not numerical information absent from the gaps."
+M06,Sections 2–4,"Exclude 2→3 from the integer-step history. Initialise with 3→5, s=1; the earlier maximum is undefined for this seed."
+M07,"Sections 3.2, 4.1",A previous maximum imposes no requirement that intermediate levels must occur first. Replace “support” or “feasibility” with observed historical maximum.
+M08,Sections 4.1 and 10.1,The assertion that a violation may be non-record contradicts s>M+1. Every rupture is a record gap. Add the short proof.
+M09,Appendix A note,"“Not equivalent to record gaps” is valid only as a proper-subclass distinction. Explain that sequential records are excluded, but non-records cannot qualify."
+M10,Section 4.3,"Retain 113→127, gap 14, step 7, previous maximum 4. Add jump 3 and skipped set {5,6}."
+M11,Sections 4.2–4.3,The first rupture desert is not the first prime-free interval. Define the integer interior explicitly.
+M12,Section 5.1,Regions starting at 2 do not tile all positive integers: 1 is omitted. The final tail also needs a convention in a finite catalogue; infinite coverage cannot be assumed from the finite table. Remove regions from Paper One.
+M13,Sections 5.3–7.4,"No computation supports claims that ruptures constrain Cunningham chains, twin primes or 2p+k forms. Remove these interpretations. The parity observation for 2p+k is correct but outside scope."
+M14,Section 8,"Odd composites start 9,15,21,25,27,…; their initial step is already 3 and their steps never exceed 3, since multiples of 3 among odd integers are six apart. Record growth is bounded rather than smoothly increasing. This is not a matched control and does not establish prime-specificity."
+M15,Section 9,"A previously unrealised step has a first occurrence, not a reappearance. Define individual and complete recovery, an observation boundary and censoring. Remove resilience terminology."
+M16,Appendix A,"All 13 lower primes, upper primes, steps and previous maxima reproduce exactly. All 26 listed region endpoints agree with the stated finite construction. No numerical edits are needed in Table A1."
+M17,Appendix B.1,"Events 14–16 start at 17,051,707; 20,831,323; 47,326,693. Events 15 and 16 are much earlier than the suggested ranges. The second successive event interval shrinks, so monotone region expansion is not supported."
+M18,Appendix B.2,Gap 246 has step 123 but is not a record gap: gap 248 appears earlier. No rupture can be assigned solely from gap size. Remove heuristic placement.
+M19,References 1–2,The exact Cunningham and Caldwell bibliographic entries were not established by the focused search. Do not reproduce them as verified references. This is not a claim that the authors or related works do not exist.
+M20,Front matter,"math.GM is General Mathematics, not the subject label “Experimental Mathematics”. Use number theory and computational number theory descriptively."
+M21,New brief,"The enlargement 89→97→113→127 omits 101,103,107,109. Include these rows; 97→113 is not a consecutive-prime transition."
+M22,New brief,"Row 1 is a geometric seed and is not prime. “Tree” names a display, not a newly specified graph-theoretic tree."
+M23,New brief,"Number of later gaps and prime-index distance are the same quantity j−n under the selected convention, not independent metrics."
+M24,Expanded checkpoint,"There are 69 selected jumps among 85 listed record entries, including the exceptional gap 1. The confirmed catalogue within 10^20 contains 68 ruptures among 84 total record entries. Entry 69 is retained separately as outside-boundary candidate."
+M25,Recovery checkpoint,"The current boundary supports complete recovery of events 1–66, not merely 1–59. Events 60–66 must not be censored when their recoveries are available."
+M26,Recovery checkpoint,"The maximum completed delay remains eight later ruptures, attained by 27 and 59. It is a finite maximum, not a bound."
+M27,Novelty,OEIS A014321 already records first occurrences of half-gaps; A053695 already records differences of record gaps. Do not claim either primitive is new.
+S01,P31 → O31,"C at 16 | Move C to 15 | 5 divides 15, not 16."
+S02,BQ26 → BQ25,I in the 19-row at 69 | Move I to the 23-row | 69=3×23.
+S03,BX26,Blank | H | 76=4×19.
+S04,CQ26,Blank | H | 95=5×19.
+S05,DJ26,Blank | H | 114=2×3×19.
+S06,DT23,Blank | K | 124=4×31.

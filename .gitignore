@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.venv/
+venv/
+sources/allgaps.sql
+sources/private/
+render/
+render_*/
+

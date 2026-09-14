@@ -1,0 +1,20 @@
+{
+  "boundary": 100000000000000000000,
+  "direct_boundary": 100000000,
+  "direct_prime_count": 5761455,
+  "direct_last_prime": 99999989,
+  "listed_events": 69,
+  "confirmed": 68,
+  "complete": 66,
+  "first13_max": 3,
+  "max_delay": 8,
+  "max_events": [
+    27,
+    59
+  ],
+  "seconds": 12.374584350999612,
+  "peak_MiB": 13.26953125,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "cpu": "x86_64"
+}

@@ -1,0 +1,32 @@
+name: Independent verification
+description: Report an independent reproduction, agreement or discrepancy.
+title: "Verification: "
+labels: [verification]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: State the event range, boundary and fields checked.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Independent method
+      description: Describe software, algorithms, data sources and versions.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result
+      description: Report agreement, discrepancies and negative findings precisely.
+    validations:
+      required: true
+  - type: textarea
+    id: artefacts
+    attributes:
+      label: Reproducibility artefacts
+      description: Link code, data, logs or checksums where available.
+

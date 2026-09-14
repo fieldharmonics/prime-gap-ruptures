@@ -1,0 +1,10 @@
+file,source,access_date,sha256,bytes
+sources/gap_snapshot.csv,"Derived from allgaps.sql: gap sizes <=1854, decimal endpoints only",2026-09-13,f3b21ad6ca77c4845e428d57226bee3841cfbf29326796ac77269da48a745935,24332
+sources/oeis_order.txt,https://oeis.org/A014321/b014321.txt,2026-09-13,26efd6c536c603f1b3fd0a22ec48cb0435c76d05f2603e2c8a02eb349ba32890,5760
+sources/boundary.html,https://primegap-list-project.github.io/fully-analyzed/,2026-09-13,0aad1f794dd5a3df88a95eb5d54403857df62076fa13f9ad23ae441edc13e8ab,13883
+sources/oeis_upper.txt,https://oeis.org/A000101/b000101.txt,2026-09-13,44e98f1b14d1580f9e5461a46a668b04200950a55f4d7f7231fabd1483557ecf,1315
+sources/allgaps.sql,https://raw.githubusercontent.com/primegap-list-project/prime-gap-list/master/allgaps.sql,2026-09-13,aa1f626e2f306d3cd3c620a87bbd9c542553385f22c6f3c6a6b92dceb12c3f29,15099209
+sources/oeis_lower.txt,https://oeis.org/A002386/b002386.txt,2026-09-13,671d8f0616ebb9fa264849ec35838b69997a43ba36ed7438489aa501114e793f,1314
+sources/oeis_first.txt,https://oeis.org/A000230/b000230.txt,2026-09-13,00fbc40a40feb4e17df94326923162f82c267a78c7e37a08cbec7ed75b4fe7ba,12424
+sources/Maths Research/Prime Factor to Violation#1.xlsx,Original author source,2026-09-13,a773fa9e66a8df938a1971358fd7f6c3cef77b2f3babf899d65cd2ec3b246be5,24671
+sources/Maths Research/Violation Events in the Prime Sequence V2.0.pdf,Original author source,2026-09-13,46d9aa8fe6820d857a199ed594aa3dbfeaea3a35e51c05039d26391608c5f475,339752

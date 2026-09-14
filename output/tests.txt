@@ -1,0 +1,35 @@
+test_01_primes (test_analysis.AuditTests.test_01_primes) ... ok
+test_02_gap (test_analysis.AuditTests.test_02_gap) ... ok
+test_03_step (test_analysis.AuditTests.test_03_step) ... ok
+test_04_exception (test_analysis.AuditTests.test_04_exception) ... ok
+test_05_record (test_analysis.AuditTests.test_05_record) ... ok
+test_06_sequential (test_analysis.AuditTests.test_06_sequential) ... ok
+test_07_rupture (test_analysis.AuditTests.test_07_rupture) ... ok
+test_08_implies_record (test_analysis.AuditTests.test_08_implies_record) ... ok
+test_09_skipped (test_analysis.AuditTests.test_09_skipped) ... ok
+test_10_first_recoveries (test_analysis.AuditTests.test_10_first_recoveries) ... ok
+test_11_complete (test_analysis.AuditTests.test_11_complete) ... ok
+test_12_censoring (test_analysis.AuditTests.test_12_censoring) ... ok
+test_13_progression (test_analysis.AuditTests.test_13_progression) ... ok
+test_14_seven_eleven (test_analysis.AuditTests.test_14_seven_eleven) ... ok
+test_15_first_rupture (test_analysis.AuditTests.test_15_first_rupture) ... ok
+test_16_gap14 (test_analysis.AuditTests.test_16_gap14) ... ok
+test_17_step7 (test_analysis.AuditTests.test_17_step7) ... ok
+test_18_previous4 (test_analysis.AuditTests.test_18_previous4) ... ok
+test_19_jump3 (test_analysis.AuditTests.test_19_jump3) ... ok
+test_20_set56 (test_analysis.AuditTests.test_20_set56) ... ok
+test_21_composites (test_analysis.AuditTests.test_21_composites) ... ok
+test_22_original_table (test_analysis.AuditTests.test_22_original_table) ... ok
+test_23_expansion (test_analysis.AuditTests.test_23_expansion) ... ok
+test_24_original_recovery (test_analysis.AuditTests.test_24_original_recovery) ... ok
+test_25_boundary (test_analysis.AuditTests.test_25_boundary) ... ok
+test_26_initialisation (test_analysis.AuditTests.test_26_initialisation) ... ok
+test_27_nonrecord (test_analysis.AuditTests.test_27_nonrecord) ... ok
+test_28_primality (test_analysis.AuditTests.test_28_primality) ... ok
+test_29_segment_edges (test_analysis.AuditTests.test_29_segment_edges) ... ok
+test_30_finite_censor (test_analysis.AuditTests.test_30_finite_censor) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.012s
+
+OK

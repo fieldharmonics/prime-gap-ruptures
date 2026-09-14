@@ -1,0 +1,23 @@
+{
+  "title": "Prime-Gap Ruptures: Reproducibility Package",
+  "description": "Code, exact datasets, automated tests and figures accompanying Riccardo Panza's observational paper on record prime-gap transitions that skip intermediate half-gap levels and the later recovery of those levels.",
+  "upload_type": "software",
+  "publication_date": "2026-09-14",
+  "creators": [
+    {
+      "name": "Panza, Riccardo"
+    }
+  ],
+  "keywords": [
+    "prime gaps",
+    "maximal prime gaps",
+    "record prime gaps",
+    "half-gaps",
+    "first occurrences",
+    "computational number theory",
+    "reproducible research"
+  ],
+  "license": "mit",
+  "access_right": "open"
+}
+

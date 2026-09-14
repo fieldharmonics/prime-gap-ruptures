@@ -1,0 +1,9 @@
+cell,integer,prime,original,expected
+O31,15,5,,C
+P31,16,5,C,
+BQ25,69,23,,I
+BQ26,69,19,I,
+BX26,76,19,,H
+CQ26,95,19,,H
+DJ26,114,19,,H
+DT23,124,31,,K
