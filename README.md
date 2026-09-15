@@ -81,7 +81,7 @@ Independent implementations, enlarged catalogues, corrections, negative results 
 
 Panza, R. (2026). *Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps*. Zenodo. [https://doi.org/10.5281/zenodo.22759521](https://doi.org/10.5281/zenodo.22759521).
 
-Citation metadata are supplied in [`CITATION.cff`](CITATION.cff). This DOI identifies the paper; a separate DOI for the reproducibility package is pending.
+Citation metadata are supplied in [`CITATION.cff`](CITATION.cff). The paper DOI is distinct from the [reproducibility package DOI: 10.5281/zenodo.22759779](https://doi.org/10.5281/zenodo.22759779), which archives release 1.0.0 at commit `eaeb0035407c3f091340d108fb1606add2a40699`.
 
 ## Licences and provenance
 
