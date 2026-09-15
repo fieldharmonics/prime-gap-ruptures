@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this framework, dataset or code, please cite this work."
 type: software
+doi: "10.5281/zenodo.22759779"
 title: "Prime-Gap Ruptures: Reproducibility Package"
 version: 1.0.0
 date-released: 2026-09-15
