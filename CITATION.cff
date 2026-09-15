@@ -3,7 +3,7 @@ message: "If you use this framework, dataset or code, please cite this work."
 type: software
 title: "Prime-Gap Ruptures: Reproducibility Package"
 version: 1.0.0
-date-released: 2026-09-14
+date-released: 2026-09-15
 authors:
   - family-names: Panza
     given-names: Riccardo
@@ -28,4 +28,6 @@ preferred-citation:
     - family-names: Panza
       given-names: Riccardo
   year: 2026
+  doi: "10.5281/zenodo.22759521"
+  url: "https://doi.org/10.5281/zenodo.22759521"
 

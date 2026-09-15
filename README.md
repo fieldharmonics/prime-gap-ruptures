@@ -2,7 +2,7 @@
 
 **Skipped Levels in the Record Growth of Consecutive Prime Gaps**
 
-Riccardo Panza · independent researcher · release candidate 1.0.0 · 14 September 2026
+Riccardo Panza · independent researcher · release 1.0.0 · 15 September 2026
 
 This repository accompanies the observational paper *Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps*. It is intended as an open, reproducible research object that other researchers can inspect, challenge, correct and extend.
 
@@ -63,7 +63,7 @@ Optional figure and document rebuilding uses the versions listed in `requirement
 | Path | Contents |
 |---|---|
 | `analysis.py` | Exact rupture and recovery analysis |
-| `test_analysis.py` | Thirty regression and definition tests |
+| `test_analysis.py` | 36 regression, definition and source-integrity tests |
 | `output/ruptures.csv` | One row per rupture or outside-boundary candidate |
 | `output/recoveries.csv` | One row per skipped step |
 | `output/records.csv` | Record-gap sequence used by the classification |
@@ -79,7 +79,9 @@ Independent implementations, enlarged catalogues, corrections, negative results 
 
 ## Citation
 
-Citation metadata are supplied in [`CITATION.cff`](CITATION.cff). The file will be updated with the Zenodo DOI after publication.
+Panza, R. (2026). *Prime-Gap Ruptures: Skipped Levels in the Record Growth of Consecutive Prime Gaps*. Zenodo. [https://doi.org/10.5281/zenodo.22759521](https://doi.org/10.5281/zenodo.22759521).
+
+Citation metadata are supplied in [`CITATION.cff`](CITATION.cff). This DOI identifies the paper; a separate DOI for the reproducibility package is pending.
 
 ## Licences and provenance
 

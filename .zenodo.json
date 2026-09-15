@@ -2,7 +2,7 @@
   "title": "Prime-Gap Ruptures: Reproducibility Package",
   "description": "Code, exact datasets, automated tests and figures accompanying Riccardo Panza's observational paper on record prime-gap transitions that skip intermediate half-gap levels and the later recovery of those levels. Original code is MIT-licensed; the paper, original figures and original derived research content are CC BY 4.0. OEIS extracts retain CC BY-SA 4.0. Other third-party numerical source material is excluded from these grants; see LICENSE.md and THIRD_PARTY_NOTICES.md for scope and limitations.",
   "upload_type": "software",
-  "publication_date": "2026-09-14",
+  "publication_date": "2026-09-15",
   "creators": [
     {
       "name": "Panza, Riccardo"
@@ -18,5 +18,12 @@
     "reproducible research"
   ],
   "license": "mit",
-  "access_right": "open"
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22759521",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ]
 }
